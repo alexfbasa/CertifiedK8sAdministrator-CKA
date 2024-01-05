@@ -1,7 +1,6 @@
 # General
-vagrant/k8s-kubeadm-kubernetes/.vagrant/
 vagrant/k8s-kubeadm-kubernetes/configs
-configs/
+vagrant/k8s-kubeadm-kubernetes/.vagrant
 
 .idea
 
@@ -30,3 +29,6 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+/vagrant/k8s-kubeadm-kubernetes/.vagrant/
+/vagrant/k8s-kubeadm-kubernetes/configs/
+/minikube/.terraform/

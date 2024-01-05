@@ -1,14 +1,14 @@
 # Certified Kubernetes Administrator (CKA) Certification Guide
 
-Welcome to the Certified Kubernetes Administrator (CKA) certification guide! This guide is designed to help you prepare
-for the CKA exam, a hands-on assessment of your Kubernetes skills. Time management is crucial for success in this exam,
-so we recommend practicing in your own environment until you can confidently perform tasks without hesitation.
+Welcome to the Certified Kubernetes Administrator (CKA) certification guide! This comprehensive resource is designed to
+assist you in your preparation for the CKA exam, a hands-on assessment of your Kubernetes skills. Successful completion
+of this certification will validate your ability to efficiently manage Kubernetes clusters.
 
 ## Exam Overview
 
-- **Version:** Based on Kubernetes 1.22 (verify the latest version
-  on [official example page](https://www.cncf.io/certification/cka/)).
-- **Curriculum Changes:** Stay updated on changes
+- **Version:** Based on Kubernetes 1.22 (verify the latest version on
+  the [official CNCF page](https://www.cncf.io/certification/cka/)).
+- **Curriculum Changes:** Stay informed about updates
   through [Kubernetes release notes](https://github.com/kubernetes/kubernetes/releases).
 
 ## Exam Structure
@@ -22,14 +22,14 @@ so we recommend practicing in your own environment until you can confidently per
 
 ## Key Concepts
 
-- Deep understanding of Kubernetes security, including security context and role-based access control (RBAC).
-- Some Kubernetes security content has shifted to the Certified Kubernetes Security Specialist (CKS) exam.
+- A profound understanding of Kubernetes security, including security context and role-based access control (RBAC).
+- Note: Some Kubernetes security content has shifted to the Certified Kubernetes Security Specialist (CKS) exam.
 
 ## Exam Day Preparation
 
-- Ensure your system
-  meets [exam provider's requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam).
-- Webcam and microphone are mandatory during the exam.
+- Ensure your system meets
+  the [exam provider's requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam).
+- A webcam and microphone are mandatory during the exam.
 - Use a single instance of a Chromium-based browser.
 - Run the [compatibility check tool](https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck).
 - Familiarize yourself with the [exam environment](https://psi.wistia.com/medias/5kidxdd0ry).
@@ -43,83 +43,83 @@ so we recommend practicing in your own environment until you can confidently per
 
 ## Tips and Tricks
 
+### General Tips
+
 - Practice with the official exam simulator at [killer.sh](https://killer.sh/course/).
 - Review [CKA exam instructions and tricks](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad).
 - Excellent time management and consistent practice are key to success.
-- Be careful with the security context;
-    - Suggest you perform a context check before working on any new questions;
-    - Check out the context:
+
+### Security Context Tips
+
+- Be cautious with the security context.
+- Perform a context check before tackling new questions:
+
   ```bash
-    kubectl config current-context
-  ```
-    - If you want to go to a specific Kubernetes cluster:
-  ```bash
-    kubectl config use-context my-current-cluster-name
-  ```
-    - You can also check out a list of Kubernetes clusters you’ve worked o:
-  ```bash
-    kubectl config get-contexts
+  kubectl config current-context
   ```
 
-- Setting up a kubectl alias to save time
-    - Check [kubectl-aliases repository on GitHub](https://github.com/ahmetb/kubectl-aliases) out.
-- Use shortcuts;
-    - Check [playbook repository](https://github.com/cloudmelon/melonkube/blob/master/00%20-%20Shortcuts.md) which
-      covers all the shortcuts for Kubernetes objects.
+- Switch to a specific Kubernetes cluster:
 
-- Setting Up kubectl Autocomplete
+  ```bash
+  kubectl config use-context my-current-cluster-name
+  ```
 
-To streamline your Kubernetes workflow and enhance efficiency during the CKA exam, consider setting up autocompletion
-for kubectl commands in your shell. Follow these steps:
+- View a list of Kubernetes clusters you've worked on:
 
-1. Install bash-completion package if not already installed:
+  ```bash
+  kubectl config get-contexts
+  ```
 
-```bash
-sudo apt-get install bash-completion  # For Debian-based systems
-sudo yum install bash-completion      # For Red Hat-based systems
-```
+### Efficiency Tips
+
+- Set up a kubectl alias to save time.
+  Check [kubectl-aliases repository on GitHub](https://github.com/ahmetb/kubectl-aliases).
+- Use shortcuts for Kubernetes objects.
+  Check [playbook repository](https://github.com/cloudmelon/melonkube/blob/master/00%20-%20Shortcuts.md).
+
+### kubectl Autocomplete Setup
+
+To streamline your Kubernetes workflow during the CKA exam, consider setting up autocompletion for kubectl commands:
+
+1. Install bash-completion:
+
+   ```bash
+   sudo apt-get install bash-completion  # For Debian-based systems
+   sudo yum install bash-completion      # For Red Hat-based systems
+   ```
 
 2. Enable autocompletion for the current shell session:
 
-```bash
-source <(kubectl completion bash)
-```
+   ```bash
+   source <(kubectl completion bash)
+   ```
 
-3. Permanently add autocompletion to your bash shell by appending the following line to your `~/.bashrc` file:
+3. Permanently add autocompletion to your bash shell:
 
-```bash
-echo "source <(kubectl completion bash)" >> ~/.bashrc
-```
+   ```bash
+   echo "source <(kubectl completion bash)" >> ~/.bashrc
+   ```
 
-4. Create a shortcut for kubectl commands by adding the following lines to your `~/.bashrc` file:
+4. Create a shortcut for kubectl commands:
 
-```bash
-alias k=kubectl
-complete -F __start_kubectl k
-```
-
-Utilizing this setup, you can now use the 'k' alias instead of typing 'kubectl' and benefit from autocompletion.
+   ```bash
+   alias k=kubectl
+   complete -F __start_kubectl k
+   ```
 
 ### Tips for Efficient Exam Preparation
 
-While preparing for the CKA exam, consider the following tips to enhance your efficiency:
+1. **Command Autocompletion:**
+   Prioritize building a robust understanding of Kubernetes commands through regular practice. Bash autocompletion,
+   though initially time-consuming, accelerates skill development.
 
-## 1. Command Autocompletion
+2. **Bookmark Important Documentation:**
+   Familiarize yourself with key Kubernetes documentation sources. Bookmark the following domains for quick reference:
 
-Although relying on bash autocompletion may take some time initially, prioritize building a robust understanding of
-Kubernetes commands through regular practice. This approach ensures quicker skill development.
-
-## 2. Bookmark Important Documentation
-
-Familiarize yourself with key Kubernetes documentation sources to swiftly locate necessary information during the exam.
-Bookmark the following domains in your browser:
-
-- [Kubernetes official documentation](https://kubernetes.io/docs/)
-- [Kubernetes blog](https://kubernetes.io/blog/)
-- [Kubernetes GitHub repository](https://github.com/kubernetes/)
-
-For quick reference, bookmark the [kubectl cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) and
-use the [official documentation search](https://kubernetes.io/search/?q=kubecon).
+    - [Kubernetes official documentation](https://kubernetes.io/docs/)
+    - [Kubernetes blog](https://kubernetes.io/blog/)
+    - [Kubernetes GitHub repository](https://github.com/kubernetes/)
+    - [kubectl cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 ## Certification and Beyond
 
@@ -128,8 +128,14 @@ use the [official documentation search](https://kubernetes.io/search/?q=kubecon)
 - Badge awarded shortly after certification.
 - For inquiries, email certificationsupport@cncf.io.
 
+## How to Set Up Your Local Lab
+
+Choose between setting up a local lab using Minikube or provisioning a Kubernetes cluster in a Linux host (Master,
+Workers) with Vagrant. Follow the instructions in [Provisioning_K8s_Lab.md](Provisioning_K8s_Vagrant) for a VM-based lab
+or [Provisioning_Minikube.md](Provisioning_Minikube.md) for a Minikube-based lab.
+
 ## Final Advice
 
 Before focusing solely on certification preparation, ensure a deep understanding of Kubernetes cluster architecture and
-ecosystem. This foundational knowledge will strengthen your grasp of exam-related content. Good luck on your CKA
+the ecosystem. This foundational knowledge will strengthen your grasp of exam-related content. Good luck on your CKA
 journey!

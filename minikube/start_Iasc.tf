@@ -4,14 +4,6 @@ resource "null_resource" "minikube" {
   }
 }
 
-resource "null_resource" "deploy_jenkins" {
-  depends_on = [null_resource.minikube]
-
-  provisioner "local-exec" {
-    command = "kubectl apply -f ${var.deployments_directory}/jenkins.yaml"
-  }
-}
-
 resource "null_resource" "destroy_minikube" {
   provisioner "local-exec" {
     when = destroy

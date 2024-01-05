@@ -1,1 +1,0 @@
-# CertifiedK8sAdministrator-CKA
